@@ -59,7 +59,7 @@ function fetchBookmarks(){
 
     bookmarksResults.innerHTML += '<div class="card bg-light text-dark card-body">'+
                                   '<h3>' + name +
-                                  ' <a class="btn btn-default bg-dark text-light" target="_blank" href="' + url +' ">Visit</a>' +
+                                  ' <a class="btn btn-default" target="_blank" href="' + url +' ">Visit</a>' +
                                   ' <a  onclick="deleteBookmark(\'' + url + '\')" class="btn btn-danger" href="#">Delete</a>'
                                   '</div>'
   }
