@@ -29,7 +29,8 @@ function saveBookmark(e){
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
-
+  // Re-fetch bookmarks
+  fetchBookmarks();
   /*
   // Local storage test
   localStorage.setItem('test', 'Hello World');
@@ -63,4 +64,21 @@ function fetchBookmarks(){
                                   '</div>'
   }
 
+}
+
+// Deletes Bookmark
+function deleteBookmark(url){
+  // Get bookmarks from localStorage
+  var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  // Loop through bookmarks
+  for(var i=0; i < bookmarks.length; i++){
+    if(bookmarks[i].url == url){
+      // Remove from array
+      bookmarks.splice(i, 1);
+    }
+  }
+  // Re-set back to localStorage
+  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  // Re-fetch bookmarks
+  fetchBookmarks();
 }
